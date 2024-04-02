@@ -1,6 +1,11 @@
 import express from "express";
+import dotenv from "dotenv";
 
 const app = express();
+
+dotenv.config();
+
+const PORT = process.env.PORT;
 
 app.get("/", (_req, res) => {
     res.send(`<html><body>Hello World! <a href="/foo">Foo</a></body></html>`);
@@ -24,6 +29,6 @@ app.get("/api/v1/bar", (_req, res) => {
     res.send(JSON.stringify({ bar: "foo" }));
 });
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
     console.log("running...");
 });

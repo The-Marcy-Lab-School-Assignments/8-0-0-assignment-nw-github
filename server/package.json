@@ -1,12 +1,13 @@
 {
-  "name": "src",
+  "name": "server",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "swc index.ts -d dist",
-    "dev": "pnpm build && nodemon dist/index.js"
+    "dev": "npm build && nodemon dist/index.js",
+    "start": "node dist/index.js"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +20,7 @@
     "nodemon": "^3.1.0"
   },
   "dependencies": {
+    "dotenv": "^16.4.5",
     "express": "^4.19.2"
   }
 }
